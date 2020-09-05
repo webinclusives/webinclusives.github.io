@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <feed xmlns="http://www.w3.org/2005/Atom" >
+    <generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator>
+    <link href="https://webinclusives.com/feed.xml" rel="self" type="application/atom+xml" />
+    <link href="https://webinclusives.com/" rel="alternate" type="text/html" />
+    <updated>2020-09-05T20:46:38+05:30</updated>
+    <id>https://webinclusives.com/feed.xml</id><title type="html">web inclusives</title>
+</feed>
