@@ -20,3 +20,9 @@
     overflow-y: visible;
     overflow-x: hidden;
 }
+
+.disabledcroll{
+    margin: 0;
+    height: 100%;
+    overflow: hidden;
+}
