@@ -2,7 +2,7 @@ var w = window.innerWidth || document.documentElement.clientWidth || document.bo
 var h = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
 
 window.onscroll = (e)=>{
-    if (document.body.scrollTop > h/20 || document.documentElement.scrollTop > h/20) {
+    if (document.body.scrollTop > h*0.075 || document.documentElement.scrollTop > h*0.075) {
         //after scroll
         document.getElementById("navbar").classList.add('shadow-lg');
     } else {
@@ -21,6 +21,7 @@ function scrollToId(id){
     document.getElementById(id).scrollIntoView({
         behavior: 'smooth'
     });
+    return false;
 }
 
 function menuclick() {

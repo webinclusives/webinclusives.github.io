@@ -13,6 +13,18 @@
     <meta property="og:url" content="https://webinclusives.com/" />
     <meta property="og:site_name" content="web inclusives" />
     <meta property="og:image" content="https://webinclusives.com/img/webinclusiveslogo.png" />
+
+    <!-- scripts -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-177464251-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-177464251-1');
+    </script>
+
     <script type="application/ld+json">
         {
             "url": "https://webinclusives.com/",
@@ -36,14 +48,14 @@
         <header id="navbar" class="fixed transition duration-200 ease-in-out bg-white text-gray-700 body-font
             w-screen">
             <div class="container mx-auto flex flex-wrap p-5 flex-row items-center">
-                <a class="flex title-font font-medium cursor-pointer items-center text-gray-900 mb-0 md:mb-0">
+                <a href="webinclusives.com" class="flex title-font font-medium cursor-pointer items-center text-gray-900 mb-0 md:mb-0">
                     <img src="img/logo.ico" alt="web-inclusives" class="h-10 w-auto">
                     <h1 class="ml-3 font-bold text-2xl">Web Inclusives</h1>
                 </a>
                 <nav class="md:ml-auto flex flex-wrap items-center hidden md:block text-base justify-center">
-                    <a onclick="scrollToId('contact')" class="mr-5 cursor-pointer hover:text-gray-900">Home</a>
-                    <a onclick="scrollToId('about')" class="mr-5 cursor-pointer hover:text-gray-900">About</a>
-                    <a onclick="scrollToId('services')" class="mr-5 cursor-pointer hover:text-gray-900">Services</a>
+                    <a href="webinclusives.com" onclick="scrollToId('contact');" class="mr-5 cursor-pointer hover:text-gray-900">Home</a>
+                    <a href="webinclusives.com" onclick="scrollToId('about')" class="mr-5 cursor-pointer hover:text-gray-900">About</a>
+                    <a href="webinclusives.com" onclick="scrollToId('services')" class="mr-5 cursor-pointer hover:text-gray-900">Services</a>
                 </nav>
                 <button onclick="scrollToId('contact')"
                     class="inline-flex text-white bg-blue-600 border-0 py-2 px-6 focus:outline-none hidden md:block hover:bg-indigo-600 rounded transition ease-in-out duration-300 text-lg">Contact
