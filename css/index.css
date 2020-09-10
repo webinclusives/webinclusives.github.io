@@ -26,3 +26,8 @@
     height: 100%;
     overflow: hidden;
 }
+
+.hover\:scale-1\.1:hover {
+    transform: scale(1.1, 1.1);
+    -webkit-transform: scale(1.1, 1.1);
+}
