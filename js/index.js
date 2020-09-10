@@ -19,9 +19,9 @@ window.scroll({
 
 function scrollToId(id){
     document.getElementById(id).scrollIntoView({
-        behavior: 'smooth'
+        behavior: 'smooth',
+        block: "center",
     });
-    return false;
 }
 
 function menuclick() {
