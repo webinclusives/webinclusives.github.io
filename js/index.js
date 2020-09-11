@@ -31,3 +31,29 @@ function menuclick() {
     document.getElementsByTagName("body")[0].classList.toggle('disabledcroll');
     document.getElementsByTagName("html")[0].classList.toggle('disabledcroll');
 }
+
+async function sendEmail(name,email,message) {
+    await Email.send({
+        Host: "smtp.gmail.com",
+        Username: "webinclusives@gmail.com",
+        Password: "tekostjeylelawkg",
+        To: 'rahulgupta89343@gmail.com',
+        From: "webinclusives@gmail.com",
+        Subject: "web inclusives Query from " + name,
+        Body: "email : "+email+"<br> message : "+message,
+    });
+}
+ 
+async function sendMessage() {
+    var name = document.getElementById('sname').value;
+    var email = document.getElementById('semail').value;
+    var message = document.getElementById('smessage').value;
+    try {
+        await sendEmail(name, email, message);
+        document.getElementById('sname').value = "";
+        document.getElementById('semail').value = "";
+        document.getElementById('smessage').value = "";
+    } catch (error) {
+        alert('error occured send again');
+    }
+}
