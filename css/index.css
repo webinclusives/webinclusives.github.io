@@ -19,6 +19,11 @@
     font-weight: 700;
     overflow-y: visible;
     overflow-x: hidden;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
 }
 
 .disabledcroll{
