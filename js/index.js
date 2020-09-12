@@ -2,12 +2,19 @@ var w = window.innerWidth || document.documentElement.clientWidth || document.bo
 var h = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
 
 window.onscroll = (e)=>{
-    if (document.body.scrollTop > h*0.075 || document.documentElement.scrollTop > h*0.075) {
+    if (document.body.scrollTop > h*0.1 || document.documentElement.scrollTop > h*0.1) {
         //after scroll
         document.getElementById("navbar").classList.add('shadow-lg');
+        document.getElementById("navbar").classList.remove('bg-transparent');
+        document.getElementsByClassName('bubbole')[0].classList.remove('z-20');
+        document.getElementsByClassName('bubbole')[0].classList.add('z-10');
     } else {
         //before scroll
         document.getElementById("navbar").classList.remove('shadow-lg');
+        document.getElementById("navbar").classList.add('bg-transparent');
+        document.getElementsByClassName('bubbole')[0].classList.add('z-20');
+        document.getElementsByClassName('bubbole')[0].classList.remove('z-10');
+
     }
 };
 
