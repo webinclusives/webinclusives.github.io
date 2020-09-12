@@ -38,7 +38,7 @@ async function sendEmail(name,email,message) {
         Username: "webinclusives@gmail.com",
         Password: "tekostjeylelawkg",
         To: 'rahulgupta89343@gmail.com',
-        From: "webinclusives@gmail.com",
+        From: "rahulgupta89343@gmail.com",
         Subject: "web inclusives Query from " + name,
         Body: "email : "+email+"<br> message : "+message,
     });
