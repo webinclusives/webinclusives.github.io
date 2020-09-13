@@ -4,17 +4,10 @@ var h = window.innerHeight || document.documentElement.clientHeight || document.
 window.onscroll = (e)=>{
     if (document.body.scrollTop > h*0.1 || document.documentElement.scrollTop > h*0.1) {
         //after scroll
-        document.getElementById("navbar").classList.add('shadow-lg');
-        document.getElementById("navbar").classList.remove('bg-transparent');
-        document.getElementsByClassName('bubbole')[0].classList.remove('z-20');
-        document.getElementsByClassName('bubbole')[0].classList.add('z-10');
+        document.getElementById("navbar").classList.add('shadow-lg');  
     } else {
         //before scroll
         document.getElementById("navbar").classList.remove('shadow-lg');
-        document.getElementById("navbar").classList.add('bg-transparent');
-        document.getElementsByClassName('bubbole')[0].classList.add('z-20');
-        document.getElementsByClassName('bubbole')[0].classList.remove('z-10');
-
     }
 };
 
@@ -33,9 +26,10 @@ function scrollToId(id){
 
 function menuclick() {
     //other menu tasks
+    // document.getElementById('box').classList.toggle('hidden');
     document.getElementById('menubaritem').classList.toggle('hidden');
     //disbale scroll
-    document.getElementsByTagName("body")[0].classList.toggle('disabledcroll');
+    document.getElementsByTagName("body")[0].disable = "True";
     document.getElementsByTagName("html")[0].classList.toggle('disabledcroll');
 }
 
