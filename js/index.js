@@ -17,19 +17,34 @@ window.scroll({
     behavior: 'smooth'
 });
 
-function scrollToId(id){
+function scrollToId(id,e){
+    if(e){
+        document.getElementById(id).scrollIntoView({
+            behavior: 'smooth',
+            block: "start",
+        });
+        return;
+    }
     document.getElementById(id).scrollIntoView({
         behavior: 'smooth',
         block: "center",
     });
 }
 
-function menuclick() {
-    //other menu tasks
-    // document.getElementById('box').classList.toggle('hidden');
+function menuclick(e) {
+    if(e){
+        document.getElementById('box').classList.remove('hidden');
+        document.getElementById('menubaritem').classList.add('hidden');
+    document.getElementsByTagName("html")[0].classList.remove('disabledcroll');
+
+        return;
+    }
+    document.getElementById('box').classList.toggle('hidden');
     document.getElementById('menubaritem').classList.toggle('hidden');
+    var m = document.getElementById('menubaritem').children;
+    m[1].style.height = h - m[0].offsetHeight+"px";
+
     //disbale scroll
-    document.getElementsByTagName("body")[0].disable = "True";
     document.getElementsByTagName("html")[0].classList.toggle('disabledcroll');
 }
 

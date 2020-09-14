@@ -44,46 +44,9 @@
 </head>
 
 <body>
-
-   <div class="absolute z-10 h-full w-full">
-       <svg height="10rem" style="transform: matrix(2,0,0,2,50,300)" width="10rem"
-           class="absolute bubbole  opacity-25 transform">
-           <defs>
-               <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
-                   <stop offset="0%" style="stop-color:rgb(152, 134, 255);stop-opacity:0.5" />
-                   <stop offset="100%" style="stop-color:rgb(182, 73, 255);stop-opacity:0.5" />
-               </linearGradient>
-           </defs>
-           <circle cx="50" cy="50" r="40" stroke-width="0" fill="url(#grad1)" />
-           Sorry, your browser does not support inline SVG.
-       </svg>
-        <svg height="10rem" style="transform: scale(1,1); top: 12rem; left: 12rem" width="10rem"
-            class="absolute bubbole animate-bounce opacity-25 transform">
-            <defs>
-                <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" style="stop-color:rgb(152, 134, 255);stop-opacity:0.5" />
-                    <stop offset="100%" style="stop-color:rgb(182, 73, 255);stop-opacity:0.5" />
-                </linearGradient>
-            </defs>
-            <circle cx="50" cy="50" r="40" stroke-width="0" fill="url(#grad1)" />
-            Sorry, your browser does not support inline SVG.
-        </svg>
-        <svg height="10rem" style="transform: scale(1,1); top: 10rem; left: 25rem" width="10rem"
-            class="absolute bubbole  opacity-25 transform">
-            <defs>
-                <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" style="stop-color:rgb(152, 134, 255);stop-opacity:0.5" />
-                    <stop offset="100%" style="stop-color:rgb(182, 73, 255);stop-opacity:0.5" />
-                </linearGradient>
-            </defs>
-            <circle cx="50" cy="50" r="40" stroke-width="0" fill="url(#grad1)" />
-            Sorry, your browser does not support inline SVG.
-        </svg>
-   </div>
-
     <!-- nav bar -->
-    <header>
-        <header id="navbar" class="fixed z-10 transition duration-200 bg-transparent ease-in-out bg-white text-gray-700 body-font
+    <header id="home">
+        <header id="navbar" style="z-index: 1;" class="fixed transition duration-200 bg-transparent ease-in-out bg-white text-gray-700 body-font
             w-screen">
             <div class="container mx-auto flex flex-wrap px-5 py-3 flex-row items-center">
                 <a href="/" class="flex title-font font-medium cursor-pointer items-center text-gray-900 mb-0 md:mb-0">
@@ -111,7 +74,7 @@
             </div>
         </header>
 
-        <div id="menubaritem" style="top: -0.25rem;" class="bg-white fixed w-screen h-screen z-10 opacity-75 hidden">
+        <div id="menubaritem" style="top: -0.25rem;z-index: 2;" class="bg-white fixed w-screen h-screen opacity-75 hidden">
             <div  class="container mx-auto flex flex-wrap p-5 flex-row items-center">
                 <div onclick="menuclick()" class="ml-auto">
                     <svg value="true" id="mbox" viewBox="0 0 100 80" width="1.95rem" height="1.95rem">
@@ -123,11 +86,33 @@
                     </svg>
                 </div>
             </div>
+            <div class="flex flex-col justify-evenly items-center">
+                <span onclick="scrollToId('home');menuclick(1)" class="cursor-pointer hover:text-black transition-all duration-300">Home</span>
+                <span onclick="scrollToId('about');menuclick(1)" class="cursor-pointer hover:text-red-400 transition-all duration-300">About</span>
+                <span onclick="scrollToId('services',1);menuclick(1)" class="cursor-pointer hover:text-indigo-700 transition-all duration-300">Services</span>
+                <button onclick="scrollToId('contact');menuclick(1)"
+                    class="inline-flex text-white bg-blue-600 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">Contact
+                </button>
+            </div>
         </div>
     </header>
 
     <!-- banner -->
-    <div id="banner">
+    <div id="banner" style="overflow:hidden;"> 
+        <div style="z-index: -1;" class="absolute h-full w-full">
+            <svg height="10rem" style="transform: matrix(2,0,0,2,50,400)" width="10rem"
+                class="absolute bubbole opacity-25 transform">
+                <defs>
+                    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:rgb(152, 134, 255);stop-opacity:0.5" />
+                        <stop offset="100%" style="stop-color:rgb(182, 73, 255);stop-opacity:0.5" />
+                    </linearGradient>
+                </defs>
+                <circle cx="50" cy="50" r="40" stroke-width="0" fill="url(#grad1)" />
+                Sorry, your browser does not support inline SVG.
+            </svg>
+        </div>
+
         <section class="text-gray-700 body-font">
             <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
             <div
@@ -161,7 +146,7 @@
             <div class="container px-5 pt-0 pb-12 mx-auto flex flex-col">
                 <div class="lg:w-4/6 mx-auto">
                     <h1 class="text-4xl text-center font-bold title-font mb-4 text-red-400">
-                        <img class="w-8 h-8 mb-2 mr-2 inline-flex" src="img/icons/about.png">
+                        <img class="w-8 h-8 mb-2 mr-1 inline-flex" src="img/icons/about.png">
                         ABOUT
                     </h1>
                     <div class="flex flex-col items-center sm:flex-row mt-10">
@@ -197,12 +182,11 @@
     </div>
 
     <div id="services">
-        
         <section class="text-gray-700 body-font">
-            <div class="container mx-auto flex px-5 py-6 flex-col items-center">
+            <div class="container mx-auto flex px-5 py-0 flex-col items-center">
                 <div>
                     <h1 style="color:  rgb(84, 44, 133);" class=" text-4xl font-bold title-font mb-10">
-                        <img class="w-8 h-8 mb-2 mr-2 inline-flex" src="img/icons/service.png">
+                        <img class="w-8 h-8 mb-1 mr-1 inline-flex" src="img/icons/service.png">
                         SERVICES
                     </h1>
                 </div>
@@ -213,7 +197,7 @@
                     <div class="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
                         
                         <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">
-                            <img class="w-8 h-8 mb-2 mr-2 inline-flex" src="img/icons/webdev.png">
+                            <img class="w-8 h-8 mb-1 mr-1 inline-flex" src="img/icons/webdev.png">
                             Web Designing
                         </h1>
                         <p class="mb-8 leading-relaxed">Copper mug try-hard pitchfork pour-over freegan heirloom neutra air
@@ -229,7 +213,7 @@
                     <div
                         class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mt-10 md:mt-0 items-center text-center">
                         <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">
-                            <img class="w-8 h-8 mb-2 mr-2 inline-flex" src="img/icons/web-maintenance.png">
+                            <img class="w-8 h-8 mb-1 mr-1 inline-flex" src="img/icons/web-maintenance.png">
                             Web Maintenance
                         </h1>
                         <p class="mb-8 leading-relaxed">Copper mug try-hard pitchfork pour-over freegan heirloom neutra air plant
@@ -242,7 +226,6 @@
                     </div>
                 </div>
             </div>
-            
         </section>
     </div>
 
@@ -255,7 +238,7 @@
             <div class="container px-5 py-24  mx-auto">
                 <div class="flex flex-col items-center text-center w-full mb-12">
                     <h1 class=" text-4xl font-bold title-font mb-4 text-blue-400">
-                        <img class="w-12 h-12 mb-2 mr-2 inline-flex" src="img/icons/contact.png">
+                        <img class="w-12 h-12 mb-2 mr-1 inline-flex" src="img/icons/contact.png">
                         CONTACT US
                     </h1>
                     <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Curious and keen to get in touch with us?
@@ -298,7 +281,7 @@
                                 <span
                                     class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center overflow-hidden sm:justify-start">
                                     <a href="https://www.facebook.com/webinclusives" target="_blank"
-                                        class="text-gray-700 transition-all duration-300 hover:scale-1.1 hover:text-blue-600">
+                                        class="text-gray-700 transition-all duration-300 transform hover:scale-110 hover:text-blue-600">
                                         <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round"
                                             stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
                                             <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z">
@@ -306,7 +289,7 @@
                                         </svg>
                                     </a>
                                     <a href="https://twitter.com/WebInclusives" target="_blank"
-                                        class="ml-3 text-gray-700 transition-all duration-300 hover:scale-1.1 hover:text-indigo-500">
+                                        class="ml-3 text-gray-700 transition-all duration-300 transform hover:scale-110 hover:text-indigo-500">
                                         <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round"
                                             stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
                                             <path
@@ -315,7 +298,7 @@
                                         </svg>
                                     </a>
                                     <a href="https://www.instagram.com/webinclusives/" target="_blank"
-                                        class="ml-3 text-gray-700 transition-all duration-300 hover:scale-1.1 hover:text-pink-500">
+                                        class="ml-3 text-gray-700 transition-all duration-300 transform hover:scale-110 hover:text-pink-500">
                                         <svg fill="none" stroke="currentColor" stroke-linecap="round"
                                             stroke-linejoin="round" stroke-width="2" class="w-5 h-5"
                                             viewBox="0 0 24 24">
@@ -324,7 +307,7 @@
                                         </svg>
                                     </a>
                                     <a href="https://www.linkedin.com/company/web-inclusives/" target="_blank"
-                                        class="ml-3 text-gray-700 transition-all duration-300 hover:scale-1.1 hover:text-indigo-500">
+                                        class="ml-3 text-gray-700 transition-all duration-300 transform hover:scale-110 hover:text-indigo-500">
                                         <svg fill="currentColor" stroke="currentColor" stroke-linecap="round"
                                             stroke-linejoin="round" stroke-width="0" class="w-5 h-5"
                                             viewBox="0 0 24 24">
@@ -376,13 +359,13 @@
                     webinclusives@gmail.com
                 </p>
                 <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center overflow-hidden sm:justify-start">
-                    <a href="https://www.facebook.com/webinclusives" target="_blank" class="text-gray-700 transition-all duration-300 hover:scale-1.1 hover:text-blue-600">
+                    <a href="https://www.facebook.com/webinclusives" target="_blank" class="text-gray-700 transition-all duration-300 transform hover:scale-110 hover:text-blue-600">
                         <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5"
                             viewBox="0 0 24 24">
                             <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
                         </svg>
                     </a>
-                    <a href="https://twitter.com/WebInclusives" target="_blank" class="ml-3 text-gray-700 transition-all duration-300 hover:scale-1.1 hover:text-indigo-500">
+                    <a href="https://twitter.com/WebInclusives" target="_blank" class="ml-3 text-gray-700 transition-all duration-300 transform hover:scale-110 hover:text-indigo-500">
                         <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5"
                             viewBox="0 0 24 24">
                             <path
@@ -390,14 +373,14 @@
                             </path>
                         </svg>
                     </a>
-                    <a href="https://www.instagram.com/webinclusives/" target="_blank" class="ml-3 text-gray-700 transition-all duration-300 hover:scale-1.1 hover:text-pink-500">
+                    <a href="https://www.instagram.com/webinclusives/" target="_blank" class="ml-3 text-gray-700 transition-all duration-300 transform hover:scale-110 hover:text-pink-500">
                         <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             class="w-5 h-5" viewBox="0 0 24 24">
                             <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
                             <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
                         </svg>
                     </a>
-                    <a href="https://www.linkedin.com/company/web-inclusives/" target="_blank" class="ml-3 text-gray-700 transition-all duration-300 hover:scale-1.1 hover:text-indigo-500">
+                    <a href="https://www.linkedin.com/company/web-inclusives/" target="_blank" class="ml-3 text-gray-700 transition-all duration-300 transform hover:scale-110 hover:text-indigo-500">
                         <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                             stroke-width="0" class="w-5 h-5" viewBox="0 0 24 24">
                             <path stroke="none"
