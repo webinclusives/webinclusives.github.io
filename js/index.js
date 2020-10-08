@@ -1,6 +1,15 @@
+//get clinet screem size
 var w = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
 var h = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
 
+// scroll behaviour
+window.scroll({
+    top: 0,
+    left: 0,
+    behavior: 'smooth'
+});
+
+//header on scroll hidden and visible
 window.onscroll = (e)=>{
     if (document.body.scrollTop > h*0.1 || document.documentElement.scrollTop > h*0.1) {
         //after scroll
@@ -10,13 +19,7 @@ window.onscroll = (e)=>{
         document.getElementById("navbar").classList.remove('shadow-lg');
     }
 };
-
-window.scroll({
-    top: 0,
-    left: 0,
-    behavior: 'smooth'
-});
-
+//scroll to fucntion
 function scrollToId(id,e){
     if(e){
         document.getElementById(id).scrollIntoView({
@@ -30,7 +33,7 @@ function scrollToId(id,e){
         block: "center",
     });
 }
-
+//menuclick
 function menuclick(e) {
     if(e){
         document.getElementById('box').classList.remove('hidden');
@@ -48,6 +51,13 @@ function menuclick(e) {
     document.getElementsByTagName("html")[0].classList.toggle('disabledcroll');
 }
 
+//scroll out
+ScrollOut({
+    once:true,
+    threshold:0.3
+});
+
+//email
 async function sendEmail(name,email,message) {
     await Email.send({
         Host: "smtp.gmail.com",
@@ -59,7 +69,7 @@ async function sendEmail(name,email,message) {
         Body: "email : "+email+"<br> message : "+message,
     });
 }
- 
+//send email
 async function sendMessage() {
     var name = document.getElementById('sname').value;
     var email = document.getElementById('semail').value;

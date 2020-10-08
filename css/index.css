@@ -31,3 +31,108 @@
     height: 100%;
     overflow: hidden;
 }
+
+/* data scroll */
+h1[data-scroll] {
+    transition: all 0.7s;
+    transition-timing-function: ease-in-out;
+}
+
+h1[data-scroll="in"] {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+h1[data-scroll="out"] {
+    transform: translateY(-100%);
+    opacity: 0;
+}
+
+[data-scroll][one] {
+    transition: all 0.7s;
+    transition-timing-function: ease-in;
+}
+
+[data-scroll="in"][one] {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+[data-scroll="out"][one] {
+    transform: translateX(-50%);
+    opacity: 0;
+}
+
+[data-scroll][two] {
+    transition: all 0.7s;
+    transition-timing-function: ease-in;
+}
+
+[data-scroll="in"][two] {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+[data-scroll="out"][two] {
+    transform: translateX(50%);
+    opacity: 0;
+}
+
+[data-scroll][three] {
+    transition: all 0.7s;
+    transition-timing-function: ease-in;
+}
+
+[data-scroll="in"][three] {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+[data-scroll="out"][three] {
+    transform: translateY(-50%);
+    opacity: 0;
+}
+
+[data-scroll][four] {
+    transition: all 0.7s;
+    transition-timing-function: ease-in;
+}
+
+[data-scroll="in"][four] {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+[data-scroll="out"][four] {
+    transform: translateY(50%);
+    opacity: 0;
+}
+
+/* animation class */
+.landing1{
+    animation: landinganimation1 0.5s 1 ease-in-out;
+}
+.landing2{
+    animation: landinganimation2 0.5s 1 ease-in-out;
+}
+
+
+/* keyframes */
+@keyframes landinganimation1{
+    from {
+        opacity: 0;
+        transform: translateY(-20%);
+    }
+    to {
+        opacity: 1;
+    }
+}
+@keyframes landinganimation2{
+    from {
+        opacity: 0;
+        transform: translateY(20%);
+    }
+    to {
+        opacity: 1;
+    }
+}
