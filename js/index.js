@@ -8,6 +8,18 @@ window.scroll({
     left: 0,
     behavior: 'smooth'
 });
+window.onload = (e)=>{
+    //scroll out
+    ScrollOut({
+        once:true,
+        threshold:0.3
+    });
+};
+
+window.onbeforeunload = function () {
+    window.location.href = window.location.href;
+    scrollToId('home');
+};
 
 //header on scroll hidden and visible
 window.onscroll = (e)=>{
@@ -50,12 +62,6 @@ function menuclick(e) {
     //disbale scroll
     document.getElementsByTagName("html")[0].classList.toggle('disabledcroll');
 }
-
-//scroll out
-ScrollOut({
-    once:true,
-    threshold:0.3
-});
 
 //email
 async function sendEmail(name,email,message) {
