@@ -11,8 +11,14 @@ window.scroll({
 window.onload = (e)=>{
     //scroll out
     ScrollOut({
-        once:true,
+        // once:true,
         threshold:0.3
+    });
+
+    ScrollOut({
+        targets : ".blog",
+        // once:true,
+        threshold: 0.6
     });
 };
 
@@ -50,17 +56,35 @@ function menuclick(e) {
     if(e){
         document.getElementById('box').classList.remove('hidden');
         document.getElementById('menubaritem').classList.add('hidden');
-    document.getElementsByTagName("html")[0].classList.remove('disabledcroll');
-
+        //disable scroll
+        document.getElementsByTagName("html")[0].classList.remove('disabledcroll');
+        //add animation
+        let el = document.getElementsByClassName('anim');
+        for (let i = 0; i < el.length; i++) {
+            if (i % 2 == 0){
+                el[i].classList.remove('anim1');
+            } else {
+                el[i].classList.remove('anim1');
+            }
+        }
         return;
     }
-    document.getElementById('box').classList.toggle('hidden');
-    document.getElementById('menubaritem').classList.toggle('hidden');
-    var m = document.getElementById('menubaritem').children;
+    document.getElementById('box').classList.add('hidden');
+    document.getElementById('menubaritem').classList.remove('hidden');
+    let m = document.getElementById('menubaritem').children;
     m[1].style.height = h - m[0].offsetHeight+"px";
-
     //disbale scroll
-    document.getElementsByTagName("html")[0].classList.toggle('disabledcroll');
+    document.getElementsByTagName("html")[0].classList.add('disabledcroll');
+    //remove animation
+    let el = document.getElementsByClassName('anim');
+    for (let i = 0; i < el.length; i++) {
+        if(i%2==0){
+            el[i].classList.add('anim1');
+        }else{
+            el[i].classList.add('anim2');
+        }
+    }
+    return;
 }
 
 //email
