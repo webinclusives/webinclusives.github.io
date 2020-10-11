@@ -271,31 +271,31 @@
                         <div class="w-full">
 
                         </div>
-                        <div class="p-2 w-full md:w-1/2">
+                        <div data-scroll one class="p-2 w-full md:w-1/2">
                             <input
                                 id="sname"
                                 class="w-full bg-gray-100 rounded border border-gray-400 focus:outline-none focus:border-indigo-500 text-base px-4 py-2"
                                 placeholder="Name" type="text">
                         </div>
-                        <div class="p-2 w-full md:w-1/2">
+                        <div data-scroll two class="p-2 w-full md:w-1/2">
                             <input
                                 id="semail"
                                 class="w-full bg-gray-100 rounded border border-gray-400 focus:outline-none focus:border-indigo-500 text-base px-4 py-2"
                                 placeholder="Email" autocomplete="on" type="email">
                         </div>
-                        <div class="p-2 w-full">
+                        <div data-scroll four class="p-2 w-full">
                             <textarea
                                 id="smessage"
                                 class="w-full bg-gray-100 rounded border border-gray-400 focus:outline-none h-48 focus:border-indigo-500 text-base px-4 py-2 resize-none block"
                                 placeholder="Message"></textarea>
                         </div>
-                        <div class="p-2 w-full">
+                        <div data-scroll three   class="p-2 w-full">
                             <button
                                 onclick="sendMessage();"
                                 class="flex mx-auto text-white bg-blue-600 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Submit</button>
                         </div>
                         <div class="p-2 flex flex-col-reverse md:flex-row justify-around items-center w-full pt-8 mt-8 border-t border-gray-200 text-center">
-                           <div>
+                           <div data-scroll one>
                                 <a class="text-indigo-500">webinclusives@gmail.com</a>
                                 <p class="leading-normal my-5">19B khatavakar bhavan, nikdwari lane
                                     <br>Ambewadi Post, Mumbai 400004
@@ -341,8 +341,8 @@
                                     </a>
                                 </span>
                            </div>
-                           <p class="my-4">or</p>
-                           <a href="https://wa.me/919820442936" target="_blank">
+                           <p data-scroll class="my-4 blog">or</p>
+                           <a data-scroll two href="https://wa.me/919820442936" target="_blank">
                                <button onclick="sendMessage();"
                                    class="flex mx-auto text-white bg-green-600 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">
                                    <svg xmlns="http://www.w3.org/2000/svg" class="mr-4" width="24" height="24" viewBox="0 0 24 24">
@@ -366,7 +366,7 @@
         </section>
     </div>
 
-    <div id="footer" style="background-color: rgba(81, 119, 243, 0.15); border-radius: 1rem;">
+    <div id="footer" data-scroll three style="background-color: rgba(81, 119, 243, 0.15); border-radius: 1rem;">
         <footer class="text- body-font">
             <div class="container px-5 py-6 mx-auto flex items-center sm:flex-row flex-col">
                 <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">

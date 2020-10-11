@@ -11,7 +11,7 @@ window.scroll({
 window.onload = (e)=>{
     //scroll out
     ScrollOut({
-        // once:true,
+        once:true,
         threshold:0.3
     });
 
