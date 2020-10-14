@@ -8,12 +8,25 @@ window.scroll({
     left: 0,
     behavior: 'smooth'
 });
+
+
 window.onload = (e)=>{
     //scroll out
-    ScrollOut({
-        once:true,
-        threshold:0.3
-    });
+    var x = window.matchMedia("(min-width: 1280px)");
+    function myFunction(x) {
+        if (x.matches) { // If media query matches
+            ScrollOut({
+                once: true,
+                threshold: 0.3
+            });
+        } else {
+            ScrollOut({
+                once: true,
+                threshold: 0.2
+            });
+        }
+    }
+    myFunction(x);
 
     ScrollOut({
         targets : ".blog",
