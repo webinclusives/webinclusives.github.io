@@ -44,7 +44,7 @@ window.onbeforeunload = function () {
 window.onscroll = (e)=>{
     if (document.body.scrollTop > h*0.1 || document.documentElement.scrollTop > h*0.1) {
         //after scroll
-        document.getElementById("navbar").classList.add('shadow-lg');  
+        document.getElementById("navbar").classList.add('shadow-lg');
     } else {
         //before scroll
         document.getElementById("navbar").classList.remove('shadow-lg');
@@ -112,6 +112,7 @@ async function sendEmail(name,email,message) {
         Body: "email : "+email+"<br> message : "+message,
     });
 }
+
 //send email
 async function sendMessage() {
     var name = document.getElementById('sname').value;
